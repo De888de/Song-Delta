@@ -5,6 +5,10 @@ import { promisify } from 'util';
 import fs from 'fs';
 import FormData from 'form-data';
 import fetch from 'node-fetch';
+import { execSync } from 'child_process';
+try {
+  execSync('pip3 install -U yt-dlp', { stdio: 'ignore' });
+} catch (e) {}
 
 const execAsync = promisify(exec);
 config();
