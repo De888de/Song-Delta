@@ -1,0 +1,5 @@
+node_modules/
+.env
+*.mp3
+ffmpeg-master-latest-win64-gpl/
+ffmpeg.zip
