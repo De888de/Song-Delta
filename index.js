@@ -106,7 +106,7 @@ bot.on('callback_query', async (ctx) => {
   const filename = `track_${Date.now()}.mp3`;
 
   try {
-    const cmd = `yt-dlp "https://www.youtube.com/watch?v=${track.id}" -x --audio-format mp3 -o "${filename}" --no-playlist --no-warnings --quiet --extractor-args "youtube:player_client=android"`;
+    const cmd = `yt-dlp "https://www.youtube.com/watch?v=${track.id}" -x --audio-format mp3 -o "${filename}" --no-playlist --no-warnings --quiet --extractor-args "youtube:player_client=web"`;
     console.log('Running:', cmd);
     await execAsync(cmd, { timeout: 180000 });
 
