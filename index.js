@@ -7,8 +7,13 @@ import FormData from 'form-data';
 import fetch from 'node-fetch';
 import { execSync } from 'child_process';
 try {
-  execSync('pip3 install -U yt-dlp', { stdio: 'ignore' });
-} catch (e) {}
+  console.log('Installing yt-dlp...');
+  execSync('pip3 install -U yt-dlp', { stdio: 'inherit' });
+  console.log('yt-dlp installed successfully');
+  execSync('yt-dlp --version', { stdio: 'inherit' });
+} catch (e) {
+  console.error('Failed to install/run yt-dlp:', e.message);
+}
 
 const execAsync = promisify(exec);
 config();
