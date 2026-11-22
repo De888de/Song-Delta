@@ -6,6 +6,8 @@ import fs from 'fs';
 import FormData from 'form-data';
 import fetch from 'node-fetch';
 import { execSync } from 'child_process';
+import { writeFileSync } from 'fs';
+
 try {
   console.log('Installing yt-dlp...');
   execSync('pip3 install -U yt-dlp', { stdio: 'inherit' });
@@ -13,6 +15,13 @@ try {
   execSync('yt-dlp --version', { stdio: 'inherit' });
 } catch (e) {
   console.error('Failed to install/run yt-dlp:', e.message);
+}
+
+if (process.env.YOUTUBE_COOKIES) {
+  writeFileSync('cookies.txt', process.env.YOUTUBE_COOKIES);
+  console.log('cookies.txt created from variable');
+} else {
+  console.log('YOUTUBE_COOKIES not found');
 }
 
 const execAsync = promisify(exec);
