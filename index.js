@@ -124,7 +124,7 @@ bot.on('callback_query', async (ctx) => {
       form.append('chat_id', ctx.senderId);
       form.append('audio', fs.createReadStream(filename), filename);
       form.append('title', track.title);
-      form.append('performer', 'Music Finder');
+      form.append('performer', 'Song Delta Δ');
 
       const response = await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendAudio`, {
         method: 'POST',
