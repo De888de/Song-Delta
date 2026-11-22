@@ -19,7 +19,7 @@ try {
 
 if (process.env.YOUTUBE_COOKIES) {
   writeFileSync('cookies.txt', process.env.YOUTUBE_COOKIES);
-  console.log('cookies.txt created from variable');
+  console.log('cookies.txt created, length:', process.env.YOUTUBE_COOKIES.length);
 } else {
   console.log('YOUTUBE_COOKIES not found');
 }
