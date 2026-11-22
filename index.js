@@ -1,12 +1,10 @@
 import { Telegram } from 'puregram';
 import { config } from 'dotenv';
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 import { promisify } from 'util';
-import fs from 'fs';
+import fs, { writeFileSync } from 'fs';
 import FormData from 'form-data';
 import fetch from 'node-fetch';
-import { execSync } from 'child_process';
-import { writeFileSync } from 'fs';
 
 try {
   console.log('Installing yt-dlp...');
