@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "packages": {
+    "python": "3.11"
+  },
+  "buildAptPackages": ["..."],
+  "deploy": {
+    "aptPackages": ["python3-pip", "ffmpeg"]
+  }
+}
